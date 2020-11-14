@@ -1,0 +1,57 @@
+@startuml
+
+title カタログ
+
+namespace domain {
+    interface BasicFareRepository {
+        Amount findBy(Destination)
+    }
+    interface BasicSuperExpressSurchargeRepository {
+        Amount findBy(TrainType, SeatType, Destination)
+    }
+    interface BusinessKilometerRepository {
+        BusinessKilometer findBy(Destination)
+    }
+
+    namespace common {
+        class Amount {}
+        class BusinessKilometer {}
+        enum Destination {
+            新大阪
+            姫路
+        }
+        enum SeatType {
+            自由席
+            指定席
+        }
+        enum TrainType {
+            のぞみ
+            ひかり
+        }
+    }
+
+    domain.BasicFareRepository -[hidden]r- domain.BasicSuperExpressSurchargeRepository
+
+    domain.BasicFareRepository -d-> domain.common.Amount
+    domain.BasicFareRepository -d-> domain.common.Destination
+
+    domain.BasicSuperExpressSurchargeRepository -d-> domain.common.Amount
+    domain.BasicSuperExpressSurchargeRepository -d-> domain.common.TrainType
+    domain.BasicSuperExpressSurchargeRepository -d-> domain.common.SeatType
+    domain.BasicSuperExpressSurchargeRepository -d-> domain.common.Destination
+
+    domain.BusinessKilometerRepository -d-> domain.common.BusinessKilometer
+    domain.BusinessKilometerRepository -d-> domain.common.Destination
+}
+
+namespace infrastructure {
+    class BasicFareRepositoryImpl {}
+    class BasicSuperExpressSurchargeRepositoryImpl {}
+    class BusinessKilometerRepositoryImpl {}
+}
+
+infrastructure.BasicFareRepositoryImpl -d-|> domain.BasicFareRepository
+infrastructure.BasicSuperExpressSurchargeRepositoryImpl -d-|> domain.BasicSuperExpressSurchargeRepository
+infrastructure.BusinessKilometerRepositoryImpl -d-|> domain.BusinessKilometerRepository
+
+@enduml
