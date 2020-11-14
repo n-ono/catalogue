@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  catalogue-db:
+    image: postgres:latest
+    container_name: catalogue-db
+    privileged: true
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+
