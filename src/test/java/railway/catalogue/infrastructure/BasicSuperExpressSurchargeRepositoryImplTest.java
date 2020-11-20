@@ -20,10 +20,10 @@ class BasicSuperExpressSurchargeRepositoryImplTest {
     return Stream.of(
         // のぞみ - 自由席 - 新大阪
         Arguments.of(
-            TrainType.NOZOMI, SeatType.FREE, Destination.SHINOSAKA, FixtureAmountValue.get(5280)),
+            TrainType.NOZOMI, SeatType.FREE, Destination.SHINOSAKA, FixtureAmountValue.get(5810)),
         // のぞみ - 自由席 - 姫路
         Arguments.of(
-            TrainType.NOZOMI, SeatType.FREE, Destination.HIMEJI, FixtureAmountValue.get(5920)),
+            TrainType.NOZOMI, SeatType.FREE, Destination.HIMEJI, FixtureAmountValue.get(6450)),
         // のぞみ - 指定席 - 新大阪
         Arguments.of(
             TrainType.NOZOMI,
@@ -35,10 +35,10 @@ class BasicSuperExpressSurchargeRepositoryImplTest {
             TrainType.NOZOMI, SeatType.RESERVED, Destination.HIMEJI, FixtureAmountValue.get(6450)),
         // ひかり - 自由席 - 新大阪
         Arguments.of(
-            TrainType.HIKARI, SeatType.FREE, Destination.SHINOSAKA, FixtureAmountValue.get(4960)),
+            TrainType.HIKARI, SeatType.FREE, Destination.SHINOSAKA, FixtureAmountValue.get(5490)),
         // ひかり - 自由席 - 姫路
         Arguments.of(
-            TrainType.HIKARI, SeatType.FREE, Destination.HIMEJI, FixtureAmountValue.get(5390)),
+            TrainType.HIKARI, SeatType.FREE, Destination.HIMEJI, FixtureAmountValue.get(5920)),
         // ひかり - 指定席 - 新大阪
         Arguments.of(
             TrainType.HIKARI,

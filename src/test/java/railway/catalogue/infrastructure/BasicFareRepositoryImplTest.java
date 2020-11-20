@@ -20,7 +20,7 @@ class BasicFareRepositoryImplTest {
 
   static Stream<Arguments> fareReferenceProvider() {
     return Stream.of(
-        Arguments.of(Destination.SHINOSAKA, FixtureAmountValue.get(8090)),
+        Arguments.of(Destination.SHINOSAKA, FixtureAmountValue.get(8910)),
         Arguments.of(Destination.HIMEJI, FixtureAmountValue.get(10010)));
   }
 
