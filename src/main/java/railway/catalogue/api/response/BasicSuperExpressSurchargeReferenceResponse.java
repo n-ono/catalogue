@@ -5,5 +5,5 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public class BasicSuperExpressSurchargeReferenceResponse {
-  @Getter private final int amountValue;
+  @Getter private final int value;
 }

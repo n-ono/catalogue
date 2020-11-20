@@ -5,5 +5,5 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public class BasicFareReferenceResponse {
-  @Getter private final int amountValue;
+  @Getter private final int value;
 }

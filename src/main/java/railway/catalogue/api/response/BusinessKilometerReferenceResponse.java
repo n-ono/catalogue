@@ -5,5 +5,5 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public class BusinessKilometerReferenceResponse {
-  @Getter private final int businessKilometerValue;
+  @Getter private final int value;
 }
