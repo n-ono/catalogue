@@ -2,6 +2,15 @@
 
 title カタログ
 
+skinparam package {
+    BackgroundColor fff4c7
+}
+
+skinparam class {
+    BorderColor black
+    BackgroundColor white
+}
+
 namespace domain {
     interface BasicFareRepository {
         Amount findBy(Destination)
